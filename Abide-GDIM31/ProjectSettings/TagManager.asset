@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Platform
+  - Enemy
+  - Left border
+  - Right border
+  - Point score
+  - Game Over
   layers:
   - Default
   - TransparentFX
