@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //Chooses which side the enemy is going to move
         float mo = Random.Range(1, 3);
 
         if (mo == 1)
@@ -34,13 +34,14 @@ public class Enemy : MonoBehaviour
             movement = right;
         }
 
+        //Decides how often the enemy wants to turn around
         if (Time.time > newTime)
         {
             rb.velocity = new Vector2(movement * speed, upForce);
             newTime = Time.time + Random.Range(0, 4);
         }
 
-
+        //Allows the enemy to go outside the view of the camera to show up on the other side of the map.
         if (rb.position.x < -17.4f)
         {
             rb.position = new Vector2(rb.position.x + 34.8f, rb.position.y);
