@@ -37,24 +37,9 @@ public class Enemy : MonoBehaviour
         //Decides how often the enemy wants to turn around
         if (Time.time > newTime)
         {
-            rb.velocity = new Vector2(movement * speed, 0);
+            rb.velocity = new Vector2(movement * speed, upForce);
             newTime = Time.time + Random.Range(0, 4);
         }
-
-
-        int i;
-
-        i += 1;
-
-        if (i > 90)
-        {
-           rb.velocity = new Vector2(0, upForce);
-        }
-
-       else if (i == 119)
-       {
-           i = 0;
-       }
         
 
         //Allows the enemy to go outside the view of the camera to show up on the other side of the map.
